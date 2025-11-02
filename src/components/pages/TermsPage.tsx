@@ -202,7 +202,7 @@ export default function TermsPage() {
               <p className="text-gray-900 mb-2"><strong>Michigan Digital Foundry</strong></p>
               <p className="text-gray-600">Warren, Michigan</p>
               <p className="text-gray-600">Email: info.michigandigitalfoundry@gmail.com</p>
-              <p className="text-gray-600">Phone: (586) 365-8389</p>
+              <p className="text-gray-600">Phone: (313) 251-2940</p>
             </div>
 
             <div className="bg-orange-50 border border-orange-200 rounded-lg p-6 mt-12">

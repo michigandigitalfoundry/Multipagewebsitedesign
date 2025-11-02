@@ -4,6 +4,7 @@ import { Button } from '../ui/button';
 import { Card } from '../ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../ui/accordion';
 import { ImageWithFallback } from '../figma/ImageWithFallback';
+import { Helmet } from 'react-helmet';
 
 export default function SocialMediaServicePage() {
   const features = [
@@ -133,7 +134,13 @@ export default function SocialMediaServicePage() {
   ];
 
   return (
-    <div className="overflow-x-hidden">
+    <>
+      <Helmet>
+        <title>Social Media Management | Michigan Digital Foundry - Warren MI</title>
+        <meta name="description" content="Social media management for Warren, Detroit, Troy businesses. 4 platforms, daily posts, professional content. $499/month. Call (313) 251-2940 to get started." />
+      </Helmet>
+      
+      <div className="overflow-x-hidden">
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-gray-900 via-purple-900 to-gray-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -429,6 +436,7 @@ export default function SocialMediaServicePage() {
           </Link>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

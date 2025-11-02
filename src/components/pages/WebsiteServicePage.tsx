@@ -4,6 +4,7 @@ import { Button } from '../ui/button';
 import { Card } from '../ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../ui/accordion';
 import { ImageWithFallback } from '../figma/ImageWithFallback';
+import { Helmet } from 'react-helmet';
 
 export default function WebsiteServicePage() {
   const websiteTypes = [
@@ -92,9 +93,15 @@ export default function WebsiteServicePage() {
   ];
 
   return (
-    <div className="overflow-x-hidden">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20">
+    <>
+      <Helmet>
+        <title>Website Design Services | Michigan Digital Foundry - Warren MI</title>
+        <meta name="description" content="Custom website design for Warren, Detroit, Troy businesses. $2,500 one-time fee. Mobile-optimized, fast-loading, SEO-ready. Call (313) 251-2940 for a quote." />
+      </Helmet>
+      
+      <div className="overflow-x-hidden">
+        {/* Hero Section */}
+        <section className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -411,6 +418,7 @@ export default function WebsiteServicePage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

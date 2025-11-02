@@ -3,6 +3,7 @@ import { CheckCircle, ArrowRight, TrendingUp, MapPin, Search, Star, Phone, BarCh
 import { Button } from '../ui/button';
 import { Card } from '../ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../ui/accordion';
+import { Helmet } from 'react-helmet';
 
 export default function SEOServicePage() {
   const seoServices = [
@@ -126,9 +127,15 @@ export default function SEOServicePage() {
   ];
 
   return (
-    <div className="overflow-x-hidden">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20">
+    <>
+      <Helmet>
+        <title>Local SEO Services | Michigan Digital Foundry - Warren MI</title>
+        <meta name="description" content="Local SEO services for Warren, Detroit, Troy businesses. Rank #1 on Google. $1,000/month. Dominate local searches. Call (313) 251-2940 for a free audit." />
+      </Helmet>
+      
+      <div className="overflow-x-hidden">
+        {/* Hero Section */}
+        <section className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -478,10 +485,11 @@ export default function SEOServicePage() {
           </Link>
           
           <div className="mt-6 text-xl">
-            Or call: <a href="tel:5863658389" className="underline hover:text-orange-200">(586) 365-8389</a>
+            Or call: <a href="tel:3132512940" className="underline hover:text-orange-200">(313) 251-2940</a>
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

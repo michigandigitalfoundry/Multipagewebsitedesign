@@ -465,7 +465,7 @@ export default function HomePage() {
                     </div>
                   </div>
                   <h3 className="text-lg text-blue-600 mb-1">YOUR BUSINESS - Emergency Plumbing</h3>
-                  <p className="text-sm text-gray-600">24/7 Service · Warren, Detroit, Troy · Call Now: (586) 365-8389 · Book Online!</p>
+                  <p className="text-sm text-gray-600">24/7 Service · Warren, Detroit, Troy · Call Now: (313) 251-2940 · Book Online!</p>
                 </div>
                 
                 <div className="opacity-50">

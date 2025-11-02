@@ -293,7 +293,7 @@ export default function AboutPage() {
           </div>
           
           <div className="mt-6 text-lg">
-            Or call: <a href="tel:5863658389" className="underline hover:text-orange-200">(586) 365-8389</a>
+            Or call: <a href="tel:3132512940" className="underline hover:text-orange-200">(313) 251-2940</a>
           </div>
         </div>
       </section>
