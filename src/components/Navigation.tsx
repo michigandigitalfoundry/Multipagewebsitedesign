@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
 import { Button } from './ui/button';
+import Logo from './Logo';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,6 +10,7 @@ export default function Navigation() {
 
   const navLinks = [
     { name: 'Services', path: '/services' },
+    { name: 'What We Offer', path: '/what-we-offer' },
     { name: 'Why Us', path: '/about' },
     { name: 'Our Work', path: '/work' },
     { name: 'Contact', path: '/contact' },
@@ -21,15 +23,7 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center space-x-2">
-            <div className="w-10 h-10 bg-gradient-to-br from-orange-600 to-orange-700 rounded-lg flex items-center justify-center">
-              <span className="text-white text-xl">MDF</span>
-            </div>
-            <div className="hidden sm:block">
-              <div className="text-gray-900">Michigan Digital Foundry</div>
-              <div className="text-xs text-gray-500">Warren, MI</div>
-            </div>
-          </Link>
+          <Logo />
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -51,11 +45,11 @@ export default function Navigation() {
           {/* Right Side - Phone & CTA */}
           <div className="hidden md:flex items-center space-x-4">
             <a
-              href="tel:5863658389"
+              href="tel:3132512940"
               className="flex items-center space-x-2 text-gray-700 hover:text-orange-600 transition-colors"
             >
               <Phone className="w-4 h-4" />
-              <span>(586) 365-8389</span>
+              <span>(313) 251-2940</span>
             </a>
             <Link to="/quote">
               <Button className="bg-orange-600 hover:bg-orange-700 text-white px-6">
@@ -92,11 +86,11 @@ export default function Navigation() {
                 </Link>
               ))}
               <a
-                href="tel:5863658389"
+                href="tel:3132512940"
                 className="px-4 py-2 flex items-center space-x-2 text-gray-700 hover:bg-gray-50 rounded-lg"
               >
                 <Phone className="w-4 h-4" />
-                <span>(586) 365-8389</span>
+                <span>(313) 251-2940</span>
               </a>
               <Link to="/quote" onClick={() => setIsOpen(false)}>
                 <Button className="w-full bg-orange-600 hover:bg-orange-700 text-white">

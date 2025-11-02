@@ -2,10 +2,17 @@ import { Link } from 'react-router-dom';
 import { Phone, Calendar, DollarSign, TrendingUp, MapPin, AlertCircle, CheckCircle, ArrowRight, Star, Play } from 'lucide-react';
 import { Button } from '../ui/button';
 import { Card } from '../ui/card';
+import { Helmet } from 'react-helmet';
 
 export default function HomePage() {
   return (
-    <div className="overflow-x-hidden">
+    <>
+      <Helmet>
+        <title>Michigan Digital Foundry | Warren MI Digital Marketing & Website Design</title>
+        <meta name="description" content="Get more customers with Michigan Digital Foundry. Website design, local SEO, and social media management for Warren, Detroit, Troy, Sterling Heights businesses. Call (313) 251-2940" />
+      </Helmet>
+      
+      <div className="overflow-x-hidden">
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-gray-900 via-gray-800 to-orange-900 text-white py-20 md:py-32">
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS1vcGFjaXR5PSIwLjAzIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-40"></div>
@@ -27,8 +34,8 @@ export default function HomePage() {
                   </Button>
                 </Link>
                 <Link to="/work">
-                  <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-6 text-lg w-full sm:w-auto">
-                    See Real Results
+                  <Button variant="outline" className="border-2 border-white text-white hover:bg-white hover:text-gray-900 px-8 py-6 text-lg w-full sm:w-auto group">
+                    See Real Results <ArrowRight className="w-5 h-5 ml-2 inline-block group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </Link>
               </div>
@@ -301,7 +308,10 @@ export default function HomePage() {
           </p>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <Card className="p-8 hover:shadow-xl transition-shadow">
+            <Card className="p-8 hover:shadow-xl transition-shadow border-2 border-orange-600 relative">
+              <div className="absolute top-4 right-4 bg-orange-600 text-white text-xs px-3 py-1 rounded-full">
+                MOST POPULAR
+              </div>
               <div className="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
                 <svg className="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -313,16 +323,13 @@ export default function HomePage() {
                 A Website That Actually Brings You Customers. Not just pretty. Built to convert visitors into paying customers 24/7. Booking systems, mobile-optimized, fast-loading, SEO-ready.
               </p>
               <Link to="/services/website">
-                <Button variant="outline" className="w-full group">
+                <Button className="w-full bg-orange-600 hover:bg-orange-700 group">
                   Learn More <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
             </Card>
             
-            <Card className="p-8 hover:shadow-xl transition-shadow border-2 border-orange-600 relative">
-              <div className="absolute top-4 right-4 bg-orange-600 text-white text-xs px-3 py-1 rounded-full">
-                MOST POPULAR
-              </div>
+            <Card className="p-8 hover:shadow-xl transition-shadow">
               <div className="w-16 h-16 bg-green-100 rounded-xl flex items-center justify-center mb-4">
                 <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -334,7 +341,7 @@ export default function HomePage() {
                 Rank #1 When Customers Search For You. Dominate 'near me' searches in Warren, Detroit, Troy. Your business shows up first when customers are ready to buy.
               </p>
               <Link to="/services/seo">
-                <Button className="w-full bg-orange-600 hover:bg-orange-700 group">
+                <Button variant="outline" className="w-full group">
                   Learn More <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
@@ -492,6 +499,98 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Michigan Metro Detroit Section */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl md:text-5xl text-center mb-6 text-gray-900">
+            Proudly Serving <span className="text-orange-600">Metro Detroit Since 2023</span>
+          </h2>
+          <p className="text-xl text-center text-gray-600 mb-12 max-w-3xl mx-auto">
+            From Warren to Detroit, Troy to Sterling Heights, Royal Oak to Macomb County—we're your local digital marketing partner helping Michigan businesses thrive.
+          </p>
+          
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+            {/* Detroit Image */}
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <img 
+                src="https://images.unsplash.com/photo-1730137568296-a25fd5a3bc84?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxEZXRyb2l0JTIwZG93bnRvd24lMjBza3lsaW5lfGVufDF8fHx8MTc2MjA5ODMxOHww&ixlib=rb-4.1.0&q=80&w=1080"
+                alt="Detroit Downtown Skyline"
+                className="w-full h-80 object-cover"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-6 text-white">
+                <h3 className="text-2xl mb-2">Detroit & Metro Area</h3>
+                <p className="text-sm text-gray-300">Your Local Digital Marketing Partner</p>
+              </div>
+            </div>
+
+            {/* Michigan Map with Location Pins */}
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <img 
+                src="https://images.unsplash.com/photo-1722888896502-89037c8264a5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxNaWNoaWdhbiUyMHN0YXRlJTIwbWFwfGVufDF8fHx8MTc2MjA5ODMxOHww&ixlib=rb-4.1.0&q=80&w=1080"
+                alt="Michigan State Map"
+                className="w-full h-80 object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-orange-600/20 to-transparent"></div>
+              
+              {/* Location Pins Overlay */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="relative w-full h-full max-w-md max-h-96">
+                  {/* Warren */}
+                  <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    <div className="relative">
+                      <MapPin className="w-8 h-8 text-orange-600 fill-orange-600 drop-shadow-lg" />
+                      <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 whitespace-nowrap bg-white px-2 py-1 rounded shadow-lg text-xs font-semibold">
+                        Warren
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Detroit */}
+                  <div className="absolute top-1/3 left-1/3">
+                    <div className="relative">
+                      <MapPin className="w-8 h-8 text-orange-600 fill-orange-600 drop-shadow-lg" />
+                      <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 whitespace-nowrap bg-white px-2 py-1 rounded shadow-lg text-xs font-semibold">
+                        Detroit
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Troy */}
+                  <div className="absolute top-1/4 left-2/3">
+                    <div className="relative">
+                      <MapPin className="w-8 h-8 text-orange-600 fill-orange-600 drop-shadow-lg" />
+                      <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 whitespace-nowrap bg-white px-2 py-1 rounded shadow-lg text-xs font-semibold">
+                        Troy
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Sterling Heights */}
+                  <div className="absolute top-1/4 left-1/2 transform translate-x-4">
+                    <div className="relative">
+                      <MapPin className="w-8 h-8 text-orange-600 fill-orange-600 drop-shadow-lg" />
+                      <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 whitespace-nowrap bg-white px-2 py-1 rounded shadow-lg text-xs font-semibold text-center">
+                        Sterling<br/>Heights
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Royal Oak */}
+                  <div className="absolute top-2/5 right-1/3">
+                    <div className="relative">
+                      <MapPin className="w-8 h-8 text-orange-600 fill-orange-600 drop-shadow-lg" />
+                      <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 whitespace-nowrap bg-white px-2 py-1 rounded shadow-lg text-xs font-semibold">
+                        Royal Oak
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Final CTA */}
       <section className="py-20 bg-gradient-to-br from-orange-600 to-orange-700 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -509,11 +608,12 @@ export default function HomePage() {
           </Link>
           
           <div className="text-xl">
-            Or call us: <a href="tel:5863658389" className="underline hover:text-orange-200">(586) 365-8389</a>
+            Or call us: <a href="tel:3132512940" className="underline hover:text-orange-200">(313) 251-2940</a>
           </div>
           <div className="text-orange-200 mt-4">Warren, MI • Serving All Metro Detroit</div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

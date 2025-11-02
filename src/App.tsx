@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Toaster } from './components/ui/sonner';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
@@ -14,31 +15,39 @@ import WorkPage from './components/pages/WorkPage';
 import AboutPage from './components/pages/AboutPage';
 import PrivacyPage from './components/pages/PrivacyPage';
 import TermsPage from './components/pages/TermsPage';
-import CalendlyWidget from './components/CalendlyWidget';
+import WhatWeOfferPage from './components/pages/WhatWeOfferPage';
+import NotFoundPage from './components/pages/NotFoundPage';
 
 export default function App() {
   return (
-    <Router>
-      <div className="min-h-screen bg-white">
-        <ScrollToTop />
-        <Navigation />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/services/website" element={<WebsiteServicePage />} />
-          <Route path="/services/seo" element={<SEOServicePage />} />
-          <Route path="/services/social-media" element={<SocialMediaServicePage />} />
-          <Route path="/contact" element={<ContactPage />} />
-          <Route path="/quote" element={<QuotePage />} />
-          <Route path="/work" element={<WorkPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/privacy" element={<PrivacyPage />} />
-          <Route path="/terms" element={<TermsPage />} />
-        </Routes>
-        <Footer />
-        <CalendlyWidget />
-        <Toaster />
-      </div>
-    </Router>
+    <HelmetProvider>
+      <Router>
+        <div className="min-h-screen bg-white">
+          <Helmet>
+            <title>Michigan Digital Foundry | Warren MI Digital Marketing Agency</title>
+            <meta name="description" content="Michigan Digital Foundry - Website design, SEO, and digital marketing for Warren, Detroit, Troy, Sterling Heights businesses. Get more customers. Call (313) 251-2940" />
+          </Helmet>
+          <ScrollToTop />
+          <Navigation />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/services/website" element={<WebsiteServicePage />} />
+            <Route path="/services/seo" element={<SEOServicePage />} />
+            <Route path="/services/social-media" element={<SocialMediaServicePage />} />
+            <Route path="/what-we-offer" element={<WhatWeOfferPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+            <Route path="/quote" element={<QuotePage />} />
+            <Route path="/work" element={<WorkPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/privacy" element={<PrivacyPage />} />
+            <Route path="/terms" element={<TermsPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+          <Footer />
+          <Toaster />
+        </div>
+      </Router>
+    </HelmetProvider>
   );
 }

@@ -1,50 +1,20 @@
-import { useState } from 'react';
 import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
 import { Button } from '../ui/button';
 import { Card } from '../ui/card';
-import { Input } from '../ui/input';
-import { Textarea } from '../ui/textarea';
-import { toast } from 'sonner@2.0.3';
+import { Helmet } from 'react-helmet';
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    businessName: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    // Simulate form submission
-    setTimeout(() => {
-      toast.success('Message sent successfully! We\'ll get back to you within 24 hours.');
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        businessName: '',
-        message: ''
-      });
-      setIsSubmitting(false);
-    }, 1000);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
 
   return (
-    <div className="overflow-x-hidden">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20">
+    <>
+      <Helmet>
+        <title>Contact Us | Michigan Digital Foundry - Warren MI Digital Marketing Agency</title>
+        <meta name="description" content="Contact Michigan Digital Foundry in Warren, MI. Call (313) 251-2940 for website design, SEO, and digital marketing services across Metro Detroit." />
+      </Helmet>
+      
+      <div className="overflow-x-hidden">
+        {/* Hero Section */}
+        <section className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl mb-6">
             Let's <span className="text-orange-500">Grow Your Business</span>
@@ -74,8 +44,8 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="text-lg mb-1 text-gray-900">Phone</h3>
-                      <a href="tel:5863658389" className="text-orange-600 hover:text-orange-700 text-xl">
-                        (586) 365-8389
+                      <a href="tel:3132512940" className="text-orange-600 hover:text-orange-700 text-xl">
+                        (313) 251-2940
                       </a>
                       <p className="text-sm text-gray-600 mt-1">Mon-Fri: 9am-6pm EST</p>
                     </div>
@@ -127,21 +97,7 @@ export default function ContactPage() {
                 </Card>
               </div>
 
-              <div className="mt-8 p-6 bg-orange-50 border border-orange-200 rounded-lg">
-                <h3 className="text-lg mb-2 text-gray-900">🚀 Prefer to schedule a call?</h3>
-                <p className="text-gray-600 mb-4">
-                  Book a free 30-minute strategy call and we'll show you exactly how to get more customers.
-                </p>
-                <Button 
-                  className="bg-orange-600 hover:bg-orange-700"
-                  onClick={() => {
-                    // The Calendly widget will handle this
-                    toast.info('Click the "Schedule time with us" button in the bottom right corner!');
-                  }}
-                >
-                  Schedule Free Call
-                </Button>
-              </div>
+
             </div>
 
             {/* Contact Form */}
@@ -149,20 +105,18 @@ export default function ContactPage() {
               <Card className="p-8">
                 <h3 className="text-2xl mb-6 text-gray-900">Send Us A Message</h3>
                 
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form action="https://formspree.io/f/xvgvvjjq" method="POST" className="space-y-6">
                   <div>
                     <label htmlFor="name" className="block text-sm mb-2 text-gray-700">
                       Your Name *
                     </label>
-                    <Input
+                    <input
                       id="name"
                       name="name"
                       type="text"
                       required
-                      value={formData.name}
-                      onChange={handleChange}
                       placeholder="John Smith"
-                      className="w-full"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600"
                     />
                   </div>
 
@@ -170,15 +124,13 @@ export default function ContactPage() {
                     <label htmlFor="email" className="block text-sm mb-2 text-gray-700">
                       Email Address *
                     </label>
-                    <Input
+                    <input
                       id="email"
                       name="email"
                       type="email"
                       required
-                      value={formData.email}
-                      onChange={handleChange}
                       placeholder="john@example.com"
-                      className="w-full"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600"
                     />
                   </div>
 
@@ -186,15 +138,13 @@ export default function ContactPage() {
                     <label htmlFor="phone" className="block text-sm mb-2 text-gray-700">
                       Phone Number *
                     </label>
-                    <Input
+                    <input
                       id="phone"
                       name="phone"
                       type="tel"
                       required
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder="(586) 123-4567"
-                      className="w-full"
+                      placeholder="(313) 123-4567"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600"
                     />
                   </div>
 
@@ -202,14 +152,12 @@ export default function ContactPage() {
                     <label htmlFor="businessName" className="block text-sm mb-2 text-gray-700">
                       Business Name
                     </label>
-                    <Input
+                    <input
                       id="businessName"
                       name="businessName"
                       type="text"
-                      value={formData.businessName}
-                      onChange={handleChange}
                       placeholder="Your Business Name"
-                      className="w-full"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600"
                     />
                   </div>
 
@@ -217,30 +165,21 @@ export default function ContactPage() {
                     <label htmlFor="message" className="block text-sm mb-2 text-gray-700">
                       Message *
                     </label>
-                    <Textarea
+                    <textarea
                       id="message"
                       name="message"
                       required
-                      value={formData.message}
-                      onChange={handleChange}
                       placeholder="Tell us about your business and what you're looking to achieve..."
                       rows={6}
-                      className="w-full"
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-600"
                     />
                   </div>
 
                   <Button
                     type="submit"
-                    disabled={isSubmitting}
                     className="w-full bg-orange-600 hover:bg-orange-700 text-lg py-6"
                   >
-                    {isSubmitting ? (
-                      'Sending...'
-                    ) : (
-                      <>
-                        Send Message <Send className="w-5 h-5 ml-2" />
-                      </>
-                    )}
+                    Send Message <Send className="w-5 h-5 ml-2" />
                   </Button>
 
                   <p className="text-sm text-gray-500 text-center">
@@ -292,15 +231,16 @@ export default function ContactPage() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:5863658389">
+            <a href="tel:3132512940">
               <Button className="bg-white text-orange-600 hover:bg-gray-100 px-10 py-6 text-xl">
                 <Phone className="w-5 h-5 mr-2" />
-                Call (586) 365-8389
+                Call (313) 251-2940
               </Button>
             </a>
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

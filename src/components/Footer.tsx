@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import { Facebook, Instagram, Linkedin, Mail, MapPin, Phone, Clock } from 'lucide-react';
+import { Facebook, Instagram, Mail, MapPin, Phone, Clock } from 'lucide-react';
+import Logo from './Logo';
 
 export default function Footer() {
   return (
@@ -8,26 +9,30 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Column 1: Brand */}
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-10 h-10 bg-gradient-to-br from-orange-600 to-orange-700 rounded-lg flex items-center justify-center">
-                <span className="text-white text-xl">MDF</span>
-              </div>
-              <div>
-                <div className="text-white">Michigan Digital Foundry</div>
-              </div>
+            <div className="mb-4">
+              <Logo />
             </div>
             <p className="text-sm mb-4">
               Digital marketing for Metro Detroit businesses. We get you more customers. Period.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="hover:text-orange-500 transition-colors">
+              <a
+                href="https://www.facebook.com/profile.php?id=61581507116081"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-gray-800 hover:bg-orange-600 rounded-lg flex items-center justify-center transition-colors"
+                aria-label="Facebook"
+              >
                 <Facebook className="w-5 h-5" />
               </a>
-              <a href="#" className="hover:text-orange-500 transition-colors">
+              <a
+                href="https://www.instagram.com/michigandigitalfoundry/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-gray-800 hover:bg-orange-600 rounded-lg flex items-center justify-center transition-colors"
+                aria-label="Instagram"
+              >
                 <Instagram className="w-5 h-5" />
-              </a>
-              <a href="#" className="hover:text-orange-500 transition-colors">
-                <Linkedin className="w-5 h-5" />
               </a>
             </div>
           </div>
@@ -49,6 +54,11 @@ export default function Footer() {
               <li>
                 <Link to="/services/social-media" className="hover:text-orange-500 transition-colors">
                   Social Media Management
+                </Link>
+              </li>
+              <li>
+                <Link to="/what-we-offer" className="hover:text-orange-500 transition-colors">
+                  What We Offer
                 </Link>
               </li>
               <li>
@@ -84,8 +94,8 @@ export default function Footer() {
               </li>
               <li className="flex items-center space-x-2">
                 <Phone className="w-4 h-4 flex-shrink-0" />
-                <a href="tel:5863658389" className="hover:text-orange-500 transition-colors">
-                  (586) 365-8389
+                <a href="tel:3132512940" className="hover:text-orange-500 transition-colors">
+                  (313) 251-2940
                 </a>
               </li>
               <li className="flex items-center space-x-2">

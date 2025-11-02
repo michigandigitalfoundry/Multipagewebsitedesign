@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { CheckCircle, ArrowRight, TrendingUp } from 'lucide-react';
 import { Button } from '../ui/button';
 import { Card } from '../ui/card';
+import { Helmet } from 'react-helmet';
 
 export default function ServicesPage() {
   const services = [
@@ -66,9 +67,15 @@ export default function ServicesPage() {
   ];
 
   return (
-    <div className="overflow-x-hidden">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20">
+    <>
+      <Helmet>
+        <title>Our Services | Michigan Digital Foundry - Warren MI Website Design & SEO</title>
+        <meta name="description" content="Website design, local SEO, and social media management services for Warren, Detroit, Troy businesses. Get more customers with Michigan Digital Foundry. Call (313) 251-2940" />
+      </Helmet>
+      
+      <div className="overflow-x-hidden">
+        {/* Hero Section */}
+        <section className="bg-gradient-to-br from-gray-900 to-gray-800 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-6xl mb-6">
             Services Built For One Thing: <span className="text-orange-500">Getting You More Customers</span>
@@ -243,6 +250,7 @@ export default function ServicesPage() {
           </Link>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }
