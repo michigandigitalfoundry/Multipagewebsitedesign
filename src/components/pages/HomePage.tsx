@@ -42,7 +42,7 @@ export default function HomePage() {
 
               <div className="flex flex-wrap items-center gap-4 text-sm md:text-base">
                 <div className="flex items-center space-x-2">
-                  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Crect width='24' height='14' y='5' fill='%23002868'/%3E%3Crect width='24' height='7' y='12' fill='%23BF0A30'/%3E%3C/svg%3E" alt="Michigan" className="w-6 h-6" />
+                  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 60 30'%3E%3Crect width='60' height='30' fill='%23B22234'/%3E%3Cpath d='M0,3.462h60M0,6.923h60M0,10.385h60M0,13.846h60M0,17.308h60M0,20.769h60M0,24.231h60M0,27.692h60' stroke='%23FFF' stroke-width='2.308'/%3E%3Crect width='24' height='17.308' fill='%233C3B6E'/%3E%3Cg fill='%23FFF'%3E%3Cg id='s'%3E%3Cg id='f'%3E%3Cg id='e'%3E%3Cpath id='d' d='M2,1.5l.69,2.12L5,3.5 3.09,5l.69,2.12L2,5.62.22,7.12.91,5,0,3.5l2.31-.12z'/%3E%3Cuse href='%23d' y='5.769'/%3E%3Cuse href='%23d' y='11.538'/%3E%3C/g%3E%3Cuse href='%23e' x='6'/%3E%3C/g%3E%3Cuse href='%23f' x='12'/%3E%3C/g%3E%3Cuse href='%23s' x='18'/%3E%3C/g%3E%3C/svg%3E" alt="USA" className="w-6 h-6" />
                   <span>Serving Warren, Detroit, Troy & All Metro Detroit</span>
                 </div>
                 <div className="flex items-center space-x-2">
