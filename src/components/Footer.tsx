@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="bg-gray-900 text-gray-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Column 1: Brand */}
           <div>
             <div className="mb-4">
@@ -73,18 +73,77 @@ export default function Footer() {
           <div>
             <h3 className="text-white mb-4">Service Areas</h3>
             <ul className="space-y-2 text-sm">
-              <li>Warren, MI</li>
-              <li>Detroit, MI</li>
-              <li>Troy, MI</li>
-              <li>Sterling Heights, MI</li>
-              <li>Royal Oak, MI</li>
-              <li>Macomb County</li>
-              <li>Oakland County</li>
-              <li>All Metro Detroit</li>
+              <li>
+                <Link to="/areas/warren-mi" className="hover:text-orange-500 transition-colors">
+                  Warren, MI
+                </Link>
+              </li>
+              <li>
+                <Link to="/areas/detroit-mi" className="hover:text-orange-500 transition-colors">
+                  Detroit, MI
+                </Link>
+              </li>
+              <li>
+                <Link to="/areas/troy-mi" className="hover:text-orange-500 transition-colors">
+                  Troy, MI
+                </Link>
+              </li>
+              <li>
+                <Link to="/areas/sterling-heights-mi" className="hover:text-orange-500 transition-colors">
+                  Sterling Heights, MI
+                </Link>
+              </li>
+              <li>
+                <Link to="/areas/royal-oak-mi" className="hover:text-orange-500 transition-colors">
+                  Royal Oak, MI
+                </Link>
+              </li>
+              <li>
+                <Link to="/areas/birmingham-mi" className="hover:text-orange-500 transition-colors">
+                  Birmingham, MI
+                </Link>
+              </li>
+              <li>
+                <Link to="/areas/michigan" className="hover:text-orange-500 transition-colors">
+                  All Michigan
+                </Link>
+              </li>
             </ul>
           </div>
 
-          {/* Column 4: Contact */}
+          {/* Column 4: Industries */}
+          <div>
+            <h3 className="text-white mb-4">Industries We Serve</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link to="/industries/hvac-contractors" className="hover:text-orange-500 transition-colors">
+                  HVAC Contractors
+                </Link>
+              </li>
+              <li>
+                <Link to="/industries/plumbers" className="hover:text-orange-500 transition-colors">
+                  Plumbers
+                </Link>
+              </li>
+              <li>
+                <Link to="/industries/auto-detailing" className="hover:text-orange-500 transition-colors">
+                  Auto Detailing
+                </Link>
+              </li>
+              <li>
+                <Link to="/industries/dentists" className="hover:text-orange-500 transition-colors">
+                  Dentists
+                </Link>
+              </li>
+              <li>
+                <Link to="/industries/contractors" className="hover:text-orange-500 transition-colors">
+                  Contractors
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 5: Contact */}
           <div>
             <h3 className="text-white mb-4">Contact</h3>
             <ul className="space-y-3 text-sm">

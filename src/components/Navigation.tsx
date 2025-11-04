@@ -1,19 +1,46 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone, ChevronDown } from 'lucide-react';
 import { Button } from './ui/button';
 import Logo from './Logo';
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
+  const [areasOpen, setAreasOpen] = useState(false);
+  const [industriesOpen, setIndustriesOpen] = useState(false);
   const location = useLocation();
 
   const navLinks = [
-    { name: 'Services', path: '/services' },
+    { name: 'Services', path: '/services', hasDropdown: true },
     { name: 'What We Offer', path: '/what-we-offer' },
     { name: 'Why Us', path: '/about' },
     { name: 'Our Work', path: '/work' },
     { name: 'Contact', path: '/contact' },
+  ];
+
+  const serviceLinks = [
+    { name: 'Website Design', path: '/services/website' },
+    { name: 'Local SEO', path: '/services/seo' },
+    { name: 'Social Media', path: '/services/social-media' },
+  ];
+
+  const areaLinks = [
+    { name: 'Warren, MI', path: '/areas/warren-mi' },
+    { name: 'Detroit, MI', path: '/areas/detroit-mi' },
+    { name: 'Troy, MI', path: '/areas/troy-mi' },
+    { name: 'Sterling Heights, MI', path: '/areas/sterling-heights-mi' },
+    { name: 'Royal Oak, MI', path: '/areas/royal-oak-mi' },
+    { name: 'Birmingham, MI', path: '/areas/birmingham-mi' },
+    { name: 'All Michigan', path: '/areas/michigan' },
+  ];
+
+  const industryLinks = [
+    { name: 'HVAC Contractors', path: '/industries/hvac-contractors' },
+    { name: 'Plumbers', path: '/industries/plumbers' },
+    { name: 'Auto Detailing', path: '/industries/auto-detailing' },
+    { name: 'Dentists', path: '/industries/dentists' },
+    { name: 'Contractors', path: '/industries/contractors' },
   ];
 
   const isActive = (path: string) => location.pathname === path;
@@ -28,17 +55,71 @@ export default function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`transition-colors ${
-                  isActive(link.path)
-                    ? 'text-orange-600'
-                    : 'text-gray-700 hover:text-orange-600'
-                }`}
-              >
-                {link.name}
-              </Link>
+              link.hasDropdown ? (
+                <div key={link.path} className="relative group">
+                  <Link
+                    to={link.path}
+                    className={`flex items-center space-x-1 transition-colors ${
+                      isActive(link.path)
+                        ? 'text-orange-600'
+                        : 'text-gray-700 hover:text-orange-600'
+                    }`}
+                  >
+                    <span>{link.name}</span>
+                    <ChevronDown className="w-4 h-4" />
+                  </Link>
+                  <div className="absolute left-0 mt-2 w-64 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50 border border-gray-200">
+                    <div className="py-2">
+                      <div className="px-4 py-2 text-xs text-gray-500 uppercase">Services</div>
+                      {serviceLinks.map((service) => (
+                        <Link
+                          key={service.path}
+                          to={service.path}
+                          className="block px-4 py-2 text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors"
+                        >
+                          {service.name}
+                        </Link>
+                      ))}
+                      <div className="border-t border-gray-200 mt-2 pt-2">
+                        <div className="px-4 py-2 text-xs text-gray-500 uppercase">Service Areas</div>
+                        {areaLinks.map((area) => (
+                          <Link
+                            key={area.path}
+                            to={area.path}
+                            className="block px-4 py-2 text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors"
+                          >
+                            {area.name}
+                          </Link>
+                        ))}
+                      </div>
+                      <div className="border-t border-gray-200 mt-2 pt-2">
+                        <div className="px-4 py-2 text-xs text-gray-500 uppercase">Industries</div>
+                        {industryLinks.map((industry) => (
+                          <Link
+                            key={industry.path}
+                            to={industry.path}
+                            className="block px-4 py-2 text-gray-700 hover:bg-orange-50 hover:text-orange-600 transition-colors"
+                          >
+                            {industry.name}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`transition-colors ${
+                    isActive(link.path)
+                      ? 'text-orange-600'
+                      : 'text-gray-700 hover:text-orange-600'
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              )
             ))}
           </div>
 
@@ -72,18 +153,67 @@ export default function Navigation() {
           <div className="md:hidden py-4 border-t border-gray-200">
             <div className="flex flex-col space-y-4">
               {navLinks.map((link) => (
-                <Link
-                  key={link.path}
-                  to={link.path}
-                  onClick={() => setIsOpen(false)}
-                  className={`px-4 py-2 rounded-lg transition-colors ${
-                    isActive(link.path)
-                      ? 'bg-orange-50 text-orange-600'
-                      : 'text-gray-700 hover:bg-gray-50'
-                  }`}
-                >
-                  {link.name}
-                </Link>
+                link.hasDropdown ? (
+                  <div key={link.path}>
+                    <button
+                      onClick={() => setServicesOpen(!servicesOpen)}
+                      className="w-full px-4 py-2 flex items-center justify-between text-gray-700 hover:bg-gray-50 rounded-lg"
+                    >
+                      <span>{link.name}</span>
+                      <ChevronDown className={`w-4 h-4 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} />
+                    </button>
+                    {servicesOpen && (
+                      <div className="ml-4 mt-2 space-y-2">
+                        <div className="text-xs text-gray-500 uppercase px-4 py-1">Services</div>
+                        {serviceLinks.map((service) => (
+                          <Link
+                            key={service.path}
+                            to={service.path}
+                            onClick={() => setIsOpen(false)}
+                            className="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded-lg"
+                          >
+                            {service.name}
+                          </Link>
+                        ))}
+                        <div className="text-xs text-gray-500 uppercase px-4 py-1 mt-3">Service Areas</div>
+                        {areaLinks.map((area) => (
+                          <Link
+                            key={area.path}
+                            to={area.path}
+                            onClick={() => setIsOpen(false)}
+                            className="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded-lg"
+                          >
+                            {area.name}
+                          </Link>
+                        ))}
+                        <div className="text-xs text-gray-500 uppercase px-4 py-1 mt-3">Industries</div>
+                        {industryLinks.map((industry) => (
+                          <Link
+                            key={industry.path}
+                            to={industry.path}
+                            onClick={() => setIsOpen(false)}
+                            className="block px-4 py-2 text-sm text-gray-600 hover:bg-orange-50 hover:text-orange-600 rounded-lg"
+                          >
+                            {industry.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                ) : (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    onClick={() => setIsOpen(false)}
+                    className={`px-4 py-2 rounded-lg transition-colors ${
+                      isActive(link.path)
+                        ? 'bg-orange-50 text-orange-600'
+                        : 'text-gray-700 hover:bg-gray-50'
+                    }`}
+                  >
+                    {link.name}
+                  </Link>
+                )
               ))}
               <a
                 href="tel:3132512940"
